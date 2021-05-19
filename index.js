@@ -1,6 +1,6 @@
 function convertFahrToCelsius(fahr) {
      // extract datatype from  from the parameter
-     const paramDataType = typeof(fahr) 
+     const paramDataType = typeof fahr 
      // validate the parameter
      if(paramDataType !== "number"){
         return `${JSON.stringify(fahr)} is not a valid number but a/an ${paramDataType}`
@@ -21,27 +21,34 @@ Question 2
 
 // for loop
 function checkYuGiOh(n) {
-     if (typeof n !== "number") {
-       return `invalid parameter: ${n}`
-     };
-     const arr = [];  // [1, 2, 3, 4 ]
-     const result = [];
-     for (let i = 1; i <= n; i++) {
-       if ( i <= 5 && (i % 2 ) ===0  ){
-      arr.push("yu");
-       }
-       else if( i <= 5 && i % 3  == 0){
-           arr.push("gi");
-       }
-       else if( i <= 5 && i % 5  == 0){
-           arr.push("oh");
-       }
-       else{
-           arr.push(i)
-       }
-     }
-   return arr
+const validateParam = Number(n)
+  if (!validateParam) {
+    return `invalid parameter: ${n}`
+  };
+  const result = [];  // [1, 2, 3, 4 ]
+  for (let i = 1; i <= n; i++) {
+    if(i % 2 === 0 && i % 3 === 0 && i % 5 === 0){
+      result.push("yu-gi-oh");
     }
-
-/
-
+    else if(i % 2 === 0 && i % 3 === 0 ){
+      result.push("yu-gi");
+    }
+     else if(i % 3 === 0 && i % 5 === 0 ){
+      result.push("gi-oh");
+    }
+    else if ( i % 2  ===0  ){
+   result.push("yu");
+    }
+    else if( i % 3 == 0){
+        result.push("gi");
+    }
+    else if( i % 5  == 0){
+        result.push("oh");
+    }
+    else{
+        result.push(i)
+    }
+  }
+return result
+ }
+checkYuGiOh(30)
