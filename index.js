@@ -51,4 +51,4 @@ const validateParam = Number(n)
   }
 return result
  }
-checkYuGiOh(30)
+console.log(checkYuGiOh(30))
