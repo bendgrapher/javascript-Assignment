@@ -2,7 +2,7 @@ function convertFahrToCelsius(fahr) {
      // extract datatype from  from the parameter
      const paramDataType = typeof fahr 
      // validate the parameter
-     if(paramDataType !== "number"){
+     if(!Number(fahr){
         return `${JSON.stringify(fahr)} is not a valid number but a/an ${paramDataType}`
      };
      // if validation passes, calculate the celsius
